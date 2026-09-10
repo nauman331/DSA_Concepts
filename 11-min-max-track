@@ -1,0 +1,19 @@
+const stockPrices = [7, 1, 5, 3, 6, 4];
+
+function maxProfit(prices) {
+    let minPrice = Infinity;
+    let maxProfit = 0;
+
+    for (let i = 0; i < prices.length; i++) {
+        let currentprice = prices[i];
+        if (currentprice < minPrice) {
+            minPrice = currentprice;
+        }
+        else if (currentprice - minPrice > maxProfit) {
+            maxProfit = currentprice - minPrice;
+        }
+    }
+    return maxProfit;
+}
+
+console.log(maxProfit(stockPrices));
